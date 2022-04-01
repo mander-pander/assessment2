@@ -1,0 +1,8 @@
+Salesforce -
+ Salesforce primarily uses Java. Job listings also require experience with agile develpment methologies with ScrumMaster experience.
+
+DocuSign -
+DocuSign largely utilizes PHP and React based off of job listings and also includes the use of Bootstrap which is a CSS library.
+
+Notion -
+Notion utilizes React and TypeScript on the frontend and is in the process of building their backend in WebRTC. Careers here typically require skills including SQLite, HTML, CSS, Javascript and React.
