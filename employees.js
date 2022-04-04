@@ -99,11 +99,37 @@ class Manager extends Employee {
     constructor(name, shifts, employees) {
         super(name, shifts)
 
-        this.employees = [employees];
+        this.employees = employees;
     }
 
     getEmployees() {
-        console.log(`${this.name} manages ${this.employees}`);
+        let employeeStr = '';
+
+        //establishing variable to make code below more readable
+        let numOfEmployees = this.employees.length;
+
+        //improves the output appearance
+        //if only one employee, nothing special about string, returning single employee
+        if (numOfEmployees === 1) {
+            employeeStr = this.employees[0];
+        //if 2 employees, add an 'and' between the two
+        } else if (numOfEmployees === 2) {
+            employeeStr = `${this.employees[0]} and ${this.employees[1]}`;
+        //if more than two handled below
+        } else {
+            this.employees.forEach((employee, idx) => {
+                //if last one, separate the 2nd to last one and last one with 'and'
+                if (idx === numOfEmployees - 1) {
+                    employeeStr += `and ${employee}`;
+                //otherwise separate names with a comma until you get to the last one which will trigger above if statement
+                } else {
+                    employeeStr += `${employee}, `;
+                }
+            });
+        }
+
+
+        console.log(`${this.name} manages ${employeeStr}`);
     }
 
     addEmployee(emp) {
@@ -124,7 +150,7 @@ class Manager extends Employee {
     employees: Cece and Schmidt
 */
 
-let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', 'Cece and Schmidt')
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
 console.log(manager.employees)
 
 /*
